@@ -9,10 +9,10 @@ api_key = os.environ.get("GEMINI_API_KEY")
 
 client = genai.Client(api_key=api_key)
 
-def main(sys_argv[1]):
+def main(sys_argv=sys.argv[1]):
     print("Hello from ask-nicely!")
     
-    sys.argv[1] = Quandry
+    sys_argv = Quandry
     string_tosend = f"{Quandry}"
     response = client.models.generate_content(
         model='gemini-2.0-flash-001', string_tosend='contents'
