@@ -18,8 +18,8 @@ def main():
     )
 
     print(f"Response: {response.text}")
-    print(f"Prompt tokens: {response.prompt_token_count}")
-    print(f"Response tokens: {response.candidate_token_count}")
+    print(f"Prompt tokens: {usage_metadata.prompt_token_count}")
+    print(f"Response tokens: {usage_metadata.candidate_token_count}")
 
 if __name__ == "__main__":
     main()
