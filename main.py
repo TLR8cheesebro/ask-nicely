@@ -9,7 +9,7 @@ api_key = os.environ.get("GEMINI_API_KEY")
 
 client = genai.Client(api_key=api_key)
 
-def main(sys.argv[1]):
+def main(sys_argv[1]):
     print("Hello from ask-nicely!")
     
     sys.argv[1] = Quandry
