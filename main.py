@@ -12,7 +12,9 @@ client = genai.Client(api_key=api_key)
 def main(sys_argv=sys.argv[1]):
     print("Hello from ask-nicely!")
     
-    sys_argv = Quandry
+    Quandry = ""
+
+    Quandry = sys_argv
     string_tosend = f"{Quandry}"
     response = client.models.generate_content(
         model='gemini-2.0-flash-001', string_tosend='contents'
