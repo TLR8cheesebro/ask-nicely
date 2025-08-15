@@ -10,15 +10,22 @@ api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
 def main(sys_argv=sys.argv[1]):
-    print("Hello from ask-nicely!")
+    print("Hello from ask-nicely! your terminal prompt is being sent to Gemini-2, you silly, sexy thing ;)")
     
-    Quandry = ""
+# this is where we prep the prompt as a string
 
+    Quandry = ""
     Quandry = sys_argv
     string_tosend = f"{Quandry}"
-    response = client.models.generate_content(
-        model='gemini-2.0-flash-001', contents=[string_tosend]
-    )
+
+# this is where I build an if statement to check if the prompt is empty
+    if len(string_tosend) < 1:
+        print("You didn't enter a prompt! Please try again.")
+        sys.exit(1)
+        else:
+            response = client.models.generate_content(
+                model='gemini-2.0-flash-001', contents=[string_tosend]
+            )
 
     print(f"Response: {response.text}")
     print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
