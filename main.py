@@ -22,10 +22,10 @@ def main(sys_argv=sys.argv[1]):
     if len(string_tosend) < 1:
         print("You didn't enter a prompt! Please try again.")
         sys.exit(1)
-        else:
-            response = client.models.generate_content(
-                model='gemini-2.0-flash-001', contents=[string_tosend]
-            )
+    else:
+        response = client.models.generate_content(
+            model='gemini-2.0-flash-001', contents=[string_tosend]
+        )
 
     print(f"Response: {response.text}")
     print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
