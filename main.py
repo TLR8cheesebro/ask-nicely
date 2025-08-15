@@ -17,7 +17,7 @@ def main(sys_argv=sys.argv[1]):
     Quandry = sys_argv
     string_tosend = f"{Quandry}"
     response = client.models.generate_content(
-        model='gemini-2.0-flash-001', string_tosend='contents'
+        model='gemini-2.0-flash-001', contents=[string_tosend]
     )
 
     print(f"Response: {response.text}")
