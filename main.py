@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 
 from google import genai
-from google import types
+from google.genai import types
 
 load_dotenv("keys.env")
 api_key = os.environ.get("GEMINI_API_KEY")
