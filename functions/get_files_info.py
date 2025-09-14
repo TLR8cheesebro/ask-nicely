@@ -2,20 +2,21 @@
 import os 
 import sys
 
-working_directory = os.getcwd()
+working_directory = "/home/hexcore_linux_ui/workspace/ai-gent/ask-nicely"
 
 print("hello from get files info.py")
-print(f"checking path; {working_directory}")
 
-directory = os.path.abspath(".")
-
-print(f"absolute path: {directory}")
+print(f"this is working directory; {working_directory}")
+print(f"this is current directory: {os.getcwd()}")
+print("lets get started . . . ")
 
 def get_files_info(working_directory, directory="."):
-    log_text = print(f"{os.path.abspath(directory)}")
+    abs_directory = print(f"{os.path.abspath(directory)}")
     
-    print(log_text)
+    if abs_directory not in working_directory:
+        print(f'Error: Cannot list "{directory}" is outside permitted space.')
+        return []
 
 
-if __name__ == "get_files_info":
+if __name__ == "__get_files_info__":
     get_files_info(working_directory, directory=".")
