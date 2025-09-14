@@ -14,7 +14,7 @@ def get_files_info(working_directory, directory="."):
     abs_directory = os.path.abspath(directory)
     
     if working_directory not in abs_directory:
-        print(f'Error: Cannot list "{directory}" is outside permitted space.')
-        return []
+        return print(f'Error: Cannot list "{directory}" is outside permitted space.')
+        
 
 get_files_info(working_directory)
